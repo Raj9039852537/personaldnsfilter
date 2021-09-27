@@ -164,6 +164,7 @@ public class DNSProxyActivity extends Activity implements OnClickListener, Logge
 	protected static int NO_ACTION_MENU = 0;
 
 
+	protected static String INFO_PREF = "►\u2004\u2009";
 	protected static String IN_FILTER_PREF = "✗\u2002\u2009";
 	protected static String NO_FILTER_PREF = "✓\u2004\u2009";
 	protected static String IP_FORWARD_PREF = "➞\u200A";
@@ -281,6 +282,7 @@ public class DNSProxyActivity extends Activity implements OnClickListener, Logge
 		public synchronized void run() {
 
 			if (!scroll_locked) {
+				m_logStr = m_logStr.replace("INFO:",INFO_PREF);
 				m_logStr = m_logStr.replace("FILTERED:",IN_FILTER_PREF);
 				m_logStr = m_logStr.replace("ALLOWED:",NO_FILTER_PREF);
 				m_logStr = m_logStr.replace("MAPPED_CUSTOM_IP:",IP_FORWARD_PREF);
